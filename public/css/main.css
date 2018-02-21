@@ -1,10 +1,15 @@
 #map {
   height: 93vh;
-  width: 99vw;
+  width: 98vw;
 }
 
 .position {
   position: absolute;
   top: 25%;
   z-index: 1000;
+}
+
+.position2 {
+position: absolute;
+bottom: 40%;
 }

@@ -10,10 +10,10 @@ function initMap() {
     zoom: 15
   });
 
-  var bike = 'assets/images/icon-pin.png';
+  var pin = 'assets/images/icon-pin.png';
   var marker = new google.maps.Marker({
     animation: google.maps.Animation.DROP,
-    icon: bike,
+    icon: pin,
     map: map,
     position: center
   });
@@ -53,6 +53,29 @@ function initMap() {
     }, function(response, status) {
       if (status === 'OK') {
         directionsDisplay.setDirections(response);
+        console.log(response);
+        console.log(response.routes[0].legs[0].distance.text);
+        console.log(response.routes[0].legs[0].duration.text);
+        var fareCard = '';
+        var tripDistance = parseInt(response.routes[0].legs[0].distance.text);
+        var tripDuration = parseInt(response.routes[0].legs[0].duration.text);
+        console.log(tripDistance);
+        console.log(tripDuration);
+
+        var estimatedFareX = 3.5 + tripDistance * 0.73 + tripDuration * 0.15;
+        var estimatedFareBlack = 6 + tripDistance * 1.7 + tripDuration * 0.25;
+        
+        fareCard = `
+        <div class="card" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Uber X <span>${estimatedFareX}</span></li>
+            <li class="list-group-item">Uber Black <span>${estimatedFareBlack}</span></li>
+          </ul>
+        </div>
+        `;
+        
+        document.querySelector('.position2').innerHTML = fareCard;
+
       } else {
         window.alert('No encontramos una ruta');
       }
@@ -63,6 +86,8 @@ function initMap() {
 
   var drawRoute = function() {
     calculateAndDisplayRoute(directionsService, directionsDisplay);
+    console.log(directionsService);
+    console.log(directionsDisplay);
   };
 
   document.getElementById('finder-btn').addEventListener('click', drawRoute);
