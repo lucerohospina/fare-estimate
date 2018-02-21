@@ -62,19 +62,20 @@ function initMap() {
         console.log(tripDistance);
         console.log(tripDuration);
 
-        var estimatedFareX = 3.5 + tripDistance * 0.73 + tripDuration * 0.15;
-        var estimatedFareBlack = 6 + tripDistance * 1.7 + tripDuration * 0.25;
+        var estimatedFareX = (3.5 + tripDistance * 0.73 + tripDuration * 0.15).toFixed(0);
+        var estimatedFareBlack = (6 + tripDistance * 1.7 + tripDuration * 0.25).toFixed(0);
         
         fareCard = `
-        <div class="card" style="width: 18rem;">
+        <div class="card col-12 col-sm-4 position2 ml-4">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Uber X <span>${estimatedFareX}</span></li>
-            <li class="list-group-item">Uber Black <span>${estimatedFareBlack}</span></li>
+            <li class="list-group-item">Tus opciones en UBER:</li>
+            <li class="list-group-item">Uber X <span class="font-weight-bold">${estimatedFareX} soles</span></li>
+            <li class="list-group-item">Uber Black <span class="font-weight-bold">${estimatedFareBlack} soles</span></li>
           </ul>
         </div>
         `;
         
-        document.querySelector('.position2').innerHTML = fareCard;
+        document.querySelector('.fare-estimate-container').innerHTML = fareCard;
 
       } else {
         window.alert('No encontramos una ruta');

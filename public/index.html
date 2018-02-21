@@ -4,25 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">  
   <title>Fare Estimate</title>
 </head>
 <body>
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
+  <header class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-4 offset-sm-4">
+        <h1 class="text-center">UBER</h1>
+      </div>
+    </div>
+  </header>
   <section class="container-fluid">
     <!-- MAPA -->
       <div class="row">
@@ -32,12 +26,23 @@
               </div>
             </div>
       </div>
+      <div class="row">
+        <!-- <div class="col-12 col-sm-4 "> -->
+          <div class="card col-12 col-sm-4 position3 ml-4">
+            <div class="card-body">
+              <h5 class="card-title">Estimador de tarifas Uber</h5>
+              <p class="card-text">Calcula una tarifa para tu próximo viaje.</p>
+              <p class="card-text">Simplement ingresa un punto de partida y un destino para comenzar.</p>
+            </div>
+          </div>
+        <!-- </div> -->
+      </div>
       <!--Fila de Inputs  -->
     <div class="row">
-      <div class="col-12 col-sm-4 position">
-        <div class="input-group mb-3">
+      <div class="col-12 col-sm-4 position ml-4 bg-white">
+        <div class="input-group mb-3 pt-3">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">
+            <span class="input-group-text bg-secondary" id="basic-addon1">
               <i class="fas fa-map-marker"></i>
             </span>
           </div>
@@ -45,22 +50,22 @@
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">
+            <span class="input-group-text bg-secondary" id="basic-addon1">
               <i class="fas fa-location-arrow"></i>
             </span>
           </div>
           <input type="text" id="finishing-input" class="form-control" placeholder="Ingresa un destino" aria-label="Username" aria-describedby="basic-addon1">
           <div class="input-group-append">
-            <button id="finder-btn" class="btn btn-outline-secondary" type="button">Button</button>
+            <button id="finder-btn" class="btn btn-secondary" type="button"><i class="fas fa-long-arrow-alt-right"></i></button>
           </div>
         </div>
       </div>
     </div>
     <!-- Fila de Tarifario -->
-    <div class="row">
-      <div class="col-12 col-sm-4 position2">
+    <div class="row fare-estimate-container">
+      <!-- <div class="col-12 col-sm-4 position2 ml-4">
         
-      </div>
+      </div> -->
     </div>
     
   </section>

@@ -1,15 +1,24 @@
+body {
+  font-family: 'Dosis', sans-serif;
+}
+
 #map {
-  height: 93vh;
+  height: 92vh;
   width: 98vw;
 }
 
 .position {
   position: absolute;
-  top: 25%;
+  top: 38%;
   z-index: 1000;
 }
 
 .position2 {
 position: absolute;
-bottom: 40%;
+bottom: 24%;
+}
+
+.position3 {
+  position: absolute;
+  top: 15%;
 }
